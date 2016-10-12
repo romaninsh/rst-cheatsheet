@@ -3,141 +3,133 @@
 Inline Markup
 -------------
 
-Inline markup allows words and phrases within text to have character styles (like italics and boldface) and functionality (like hyperlinks).
+*emphasis*,  **strong emphasis**, `interpreted text`, ``inline literal``.
 
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    *emphasis*                                            | *emphasis*                                     |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    **strong emphasis**                                   | **strong emphasis**                            |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       | The rendering and meaning of interpreted text  |
-|                                                          | is domain- or application-dependent.           |
-|    `interpreted text`                                    |                                                |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    ``inline literal``                                    | ``inline literal``                             |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    reference_                                            | reference_                                     |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    `phrase reference`_                                   | `phrase reference`_                            |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    anonymous__                                           | anonymous__                                    |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    _`inline internal target`                             | _`inline internal target`                      |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       | The result is substituted in from the          |
-|                                                          | substitution definition.                       |
-|    |substitution reference|                              |                                                |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    footnote reference [1]_                               | footnote reference [1]_                        |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    citation reference [CIT2002]_                         | citation reference [CIT2002]_                  |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    http://docutils.sf.net/                               | http://docutils.sf.net/                        |
-+----------------------------------------------------------+------------------------------------------------+
+.. code-block:: rst
 
-__ http://docutils.sourceforge.net/docs/user/rst/quickref.html#hyperlink-targets
+    *emphasis*,  **strong emphasis**, `interpreted text`, ``inline literal``.
 
-.. _reference: http://docutils.sourceforge.net/docs/user/rst/quickref.html#hyperlink-targets
 
-.. _phrase reference: http://docutils.sourceforge.net/docs/user/rst/quickref.html#hyperlink-targets
+References and Links
+--------------------
 
-Escaping with Backslashes
--------------------------
+ref_, :ref:`target`, `link <http://example.com/>`_, :doc:`rst-cheatsheet`
 
-reStructuredText uses backslashes ("\\") to override the special meaning given to markup characters and get
-the literal characters themselves. To get a literal backslash, use an escaped backslash ("\\\\"). For example:
+.. code-block:: rst
 
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    *escape* ``with`` "\"                                 | *escape* ``with`` "\"                          |
-+----------------------------------------------------------+------------------------------------------------+
-| ::                                                       |                                                |
-|                                                          |                                                |
-|    \*escape* \``with`` "\\"                              | \*escape* \``with`` "\\"                       |
-+----------------------------------------------------------+------------------------------------------------+
+    reference_, :ref:`reference`, `link <http://example.com/>`_, :doc:`rst-cheatsheet`
+
+
+.. _target:
+
+Targets
+-------
+
+.. _ref: http://example.com
+
+.. code-block:: rst
+
+    .. _reference: http://example.com
 
 Lists
 -----
 
-+----------------------------------------------------------+------------------------------------------------------+
-| ::                                                       |                                                      |
-|                                                          |                                                      |
-|    - This is item 1. A blank line before the first       |    - This is item 1. A blank line before the first   |
-|      and last items is required.                         |      and last items is required.                     |
-|    - This is item 2                                      |    - This is item 2                                  |
-|                                                          |                                                      |
-|    - Item 3: blank lines between items are optional.     |    - Item 3: blank lines between items are optional. |
-|    - Item 4: Bullets are "-", "*" or "+".                |    - Item 4: Bullets are "-", "*" or "+".            |
-|      Continuing text must be aligned after the bullet    |      Continuing text must be aligned after the bullet|
-|      and whitespace.                                     |      and whitespace.                                 |
-+----------------------------------------------------------+------------------------------------------------------+
-| ::                                                       |                                                      |
-|                                                          |                                                      |
-|    3. This is the first item                             |    3. This is the first item                         |
-|    4. This is the second item                            |    4. This is the second item                        |
-|    5. Enumerators are arabic numbers,                    |    5. Enumerators are arabic numbers,                |
-|       single letters, or roman numerals                  |       single letters, or roman numerals              |
-|    6. List items should be sequentially                  |    6. List items should be sequentially              |
-|       numbered, but need not start at 1                  |       numbered, but need not start at 1              |
-|       (although not all formatters will                  |       (although not all formatters will              |
-|       honour the first index).                           |       honour the first index).                       |
-|    #. This item is auto-enumerated                       |    #. This item is auto-enumerated                   |
-+----------------------------------------------------------+------------------------------------------------------+
-| ::                                                       |                                                      |
-|                                                          |                                                      |
-|    what                                                  |    what                                              |
-|      Definition lists associate a term with              |      Definition lists associate a term with          |
-|      a definition.                                       |      a definition.                                   |
-|                                                          |                                                      |
-|    how                                                   |    how                                               |
-|      The term is a one-line phrase, and the              |      The term is a one-line phrase, and the          |
-|      definition is one or more paragraphs or             |      definition is one or more paragraphs or         |
-|      body elements, indented relative to the             |      body elements, indented relative to the         |
-|      term. Blank lines are not allowed                   |      term. Blank lines are not allowed               |
-|      between term and definition.                        |      between term and definition.                    |
-+----------------------------------------------------------+------------------------------------------------------+
-| ::                                                       |                                                      |
-|                                                          |                                                      |
-|    :Authors:                                             |    :Authors:                                         |
-|        Tony J. (Tibs) Ibbs,                              |        Tony J. (Tibs) Ibbs,                          |
-|        David Goodger                                     |        David Goodger                                 |
-|                                                          |                                                      |
-|        (and sundry other good-natured folks)             |        (and sundry other good-natured folks)         |
-|                                                          |                                                      |
-|    :Version: 1.0 of 2001/08/08                           |    :Version: 1.0 of 2001/08/08                       |
-|    :Dedication: To my father.                            |    :Dedication: To my father.                        |
-+----------------------------------------------------------+------------------------------------------------------+
-| ::                                                       |                                                      |
-|                                                          |                                                      |
-|    -a            command-line option "a"                 |    -a            command-line option "a"             |
-|    -b file       options can have arguments              |    -b file       options can have arguments          |
-|                  and long descriptions                   |                  and long descriptions               |
-|    --long        options can be long also                |    --long        options can be long also            |
-|    --input=file  long options can also have              |    --input=file  long options can also have          |
-|                  arguments                               |                  arguments                           |
-|    /V            DOS/VMS-style options too               |    /V            DOS/VMS-style options too           |
-+----------------------------------------------------------+------------------------------------------------------+
+- item list
+- no extra space before dash
+
+  - add blank line above
+    
+    .. code-block:: php
+    
+        echo 2+2;
+
+  - keep alignment
+    and can use more lines
+
+.. code-block:: rst
+
+    - item
+    - list
+
+      - add blank line above
+        
+        .. code-block:: php
+        
+            echo 2+2;
+
+      - keep alignment
+        and you can use more lines
+
+Numeric Lists
+`````````````
+
+1. Numeric List
+#. is auto-numbered
+
+   #. use line above and below
+
+    a. or single space in alignment
+    #. various numbering options
+
+   #. sometimes '#' fails
+   #. so use numbers
+#. here '#' works though.
+
+.. code-block:: rst
+
+    1. Numeric List
+    #. is auto-numbered
+
+       #. use line above
+
+        a. or single space in alignment
+        #. various numbering options
+
+       #. sometimes '#' fails
+       #. so use numbers
+    #. here '#' works though.
+
+Definition Lists
+````````````````
+
+definition list
+    here is example::
+
+        echo 2+2;
+inline code
+    can be also used.
+
+    .. code-block:: json
+
+        {"A":123}
+
+.. code-block:: rst
+
+    definition list
+        here is example::
+
+            echo 2+2;
+    inline code
+        can be also used.
+
+        .. code-block:: json
+
+            {"A":123}
+
+
+Option Lists
+````````````
+
+-a           option list start with '-' and a line
+--arguments  will have a special treatment
+/dos         for application arguments
+
+.. code-block:: rst
+
+    -a           option list start with '-' and a line
+    --arguments  will have a special treatment
+    /dos         for application arguments
+
 
 .. raw:: pdf
 
