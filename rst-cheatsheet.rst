@@ -218,23 +218,6 @@ Blocks
 |   >>> print "This is a doctest block."                        |   >>> print "This is a doctest block."               |
 |   This is a doctest block.                                    |   This is a doctest block.                           |
 +---------------------------------------------------------------+------------------------------------------------------+
-| ::                                                            |                                                      |
-|                                                               |                                                      |
-|   A transition marker is a horizontal line                    |   A transition marker is a horizontal line           |
-|   of 4 or more repeated punctuation                           |   of 4 or more repeated punctuation                  |
-|   characters.                                                 |   characters.                                        |
-|                                                               |                                                      |
-|   ------------                                                |   .. class:: faketrans                               |
-|                                                               |                                                      |
-|   A transition should not begin or end a                      |   +-----------+                                      |
-|   section or document, nor should two                         |   |           |                                      |
-|   transitions be immediately adjacent.                        |   +-----------+                                      |
-|                                                               |                                                      |
-|                                                               |                                                      |
-|                                                               |   A transition should not begin or end a             |
-|                                                               |   section or document, nor should two                |
-|                                                               |   transitions be immediately adjacent.               |
-+---------------------------------------------------------------+------------------------------------------------------+
 
 .. raw:: pdf
 
@@ -246,36 +229,30 @@ Tables
 There are two syntaxes for tables in reStructuredText. Grid tables are complete but cumbersome to create. Simple
 tables are easy to create but limited (no row spans, etc.).
 
-+---------------------------------------------------------------+------------------------------------------------------+
-| ::                                                            |                                                      |
-|                                                               |   .. class:: exampletable1                           |
-|                                                               |                                                      |
-|   +------------+------------+-----------+                     |   +------------+------------+-----------+            |
-|   | Header 1   | Header 2   | Header 3  |                     |   | Header 1   | Header 2   | Header 3  |            |
-|   +============+============+===========+                     |   +============+============+===========+            |
-|   | body row 1 | column 2   | column 3  |                     |   | body row 1 | column 2   | column 3  |            |
-|   +------------+------------+-----------+                     |   +------------+------------+-----------+            |
-|   | body row 2 | Cells may span columns.|                     |   | body row 2 | Cells may span columns.|            |
-|   +------------+------------+-----------+                     |   +------------+------------+-----------+            |
-|   | body row 3 | Cells may  | - Cells   |                     |   | body row 3 | Cells may  | - Cells   |            |
-|   +------------+ span rows. | - contain |                     |   +------------+ span rows. | - contain |            |
-|   | body row 4 |            | - blocks. |                     |   | body row 4 |            | - blocks. |            |
-|   +------------+------------+-----------+                     |   +------------+------------+-----------+            |
-+---------------------------------------------------------------+------------------------------------------------------+
-| ::                                                            |                                                      |
-|                                                               |   .. class:: exampletable1                           |
-|                                                               |                                                      |
-|   =====  =====  ======                                        |   =====  =====  ======                               |
-|      Inputs     Output                                        |      Inputs     Output                               |
-|   ------------  ------                                        |   ------------  ------                               |
-|     A      B    A or B                                        |     A      B    A or B                               |
-|   =====  =====  ======                                        |   =====  =====  ======                               |
-|   False  False  False                                         |   False  False  False                                |
-|   True   False  True                                          |   True   False  True                                 |
-|   False  True   True                                          |   False  True   True                                 |
-|   True   True   True                                          |   True   True   True                                 |
-|   =====  =====  ======                                        |   =====  =====  ======                               |
-+---------------------------------------------------------------+------------------------------------------------------+
++------------+------------+-----------+
+| Header 1   | Header 2   | Header 3  |
++============+============+===========+
+| body row 1 | column 2   | column 3  |
++------------+------------+-----------+
+| body row 2 | Cells may span columns.|
++------------+------------+-----------+
+| body row 3 | Cells may  | - Cells   |
++------------+ span rows. | - contain |
+| body row 4 |            | - blocks. |
++------------+------------+-----------+
+
+=====  =====  ======
+   Inputs     Output
+------------  ------
+  A      B    A or B
+=====  =====  ======
+False  False  False 
+True   False  True  
+False  True   True  
+True   True   True  
+=====  =====  ======
+
+------------------------------------------------------------+------------------------------------------------------+
 
 Explicit Markup
 ---------------
