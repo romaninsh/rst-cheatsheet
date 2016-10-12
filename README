@@ -12,4 +12,4 @@ Magnetic Balls V2 by fdecomite: http://www.flickr.com/photos/fdecomite/292655679
 
 To build:
 
-rst2pdf rst-cheatsheet.rst -s cheatsheet
+make
